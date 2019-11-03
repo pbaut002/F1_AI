@@ -1,0 +1,16 @@
+{
+	"build_systems": 
+	[
+	  {
+	    "name": "Main run",
+	    "shell_cmd": "python main.py",
+	    "selector": "source.python",
+	  }
+	],
+	"folders":
+	[
+		{
+			"path": "C:\\Users\\Peter\\Dropbox\\Past_Semesters\\Fall_2019\\CPSC_481\\Project"
+		}
+	]
+}

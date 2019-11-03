@@ -9,7 +9,7 @@ class Car():
 
     def __init__(self, game, display, brain=None):
         self.score = 0
-        
+        self.name = None
         # Car Attributes
         self.car_length = int(ceil(display[0] * 47 / 1120))
         self.car_width = int(ceil(display[1] * 13 / 480))
@@ -45,7 +45,7 @@ class Car():
 
         # Steering
         self.steering = 0
-        self.angle = 0
+        self.angle = .05
         self.length = self.car_length
         self.max_steering = 30
 
@@ -54,11 +54,12 @@ class Car():
         ).x + self.car_width / 2, self.getCarPos().y + self.car_length / 2))
 
         self.player_control = True
-
-        print(self.car_rect.topleft)
-        print(self.car_rect.topright)
-        print(self.car_rect.bottomleft)
-        print(self.car_rect.bottomright)
+        self.checkpoints = None
+        self.next_checkpoint = None
+        # print(self.car_rect.topleft)
+        # print(self.car_rect.topright)
+        # print(self.car_rect.bottomleft)
+        # print(self.car_rect.bottomright)
 
     def check_border(self):
 
@@ -110,10 +111,13 @@ class Car():
 
         # Use line intersection formula
         car_points = self.checkCorners()
-
         current_line = Line(Vector2(car_points[0]), Vector2(car_points[1]))
         current_line2 = Line(Vector2(car_points[2]), Vector2(car_points[3]))
         
+        car_points = current_line.points_on_line()
+        car_points.extend(current_line2.points_on_line())
+
+
         current_collision_points = []
         for line in collisionPoints:
             collision_point = []
@@ -134,7 +138,7 @@ class Car():
                         return True
 
     def teleportCar(self, position):
-        self.position = position
+        self.position.update(position)
 
     def getCarAngle(self):
         return self.angle
@@ -153,8 +157,11 @@ class Car():
         self.position.update(position)
         self.angle = 0
         self.score = 0
+        self.checkpoints = None
 
-    def update(self, direction, lines, collisionPoints, checkpoints, checkpoint):
+    def update(self, direction, collisionPoints, checkpoints, time):
+        if self.checkpoints == None:
+            self.checkpoints = checkpoints.copy()
         if direction[pygame.K_LEFT]:
             self.steering -= 5
         elif direction[pygame.K_RIGHT]:
@@ -193,16 +200,18 @@ class Car():
         self.position += self.velocity.rotate(-self.angle)
 
         if self.checkCollision(collisionPoints):
-            self.position = original_pos
+            self.position.update(original_pos)
             self.velocity.update(0, 0)
             self.crashed = True
+            self.score = round(self.score + (1/time) * 1000,2)
+            self.checkpoints = None
 
-        if self.checkCollision(checkpoint):
-            checkpoints.pop(0)
-            self.score += 1
-            checkpoint.pop(0)
-            print(self.score)
-
+        if self.checkpoints:
+            self.next_checkpoint = [Line(self.checkpoints[0][0], self.checkpoints[0][1])]
+            if self.checkCollision(self.next_checkpoint):
+                self.checkpoints.pop(0)
+                self.score += 1
+                self.next_checkpoint.pop(0)
         self.angle = self.angle % 360
         self.angle += degrees(self.angular_velocity)
 

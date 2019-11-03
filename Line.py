@@ -21,6 +21,14 @@ class Line():
     def __repr__(self):
         return "{} {} {} {}".format(self.min_x,self.max_x, self.min_y, self.max_y)
 
+    def points_on_line(self):
+        points = []
+        for i in range(round(self.min_x), round(self.max_x)):
+            y = self.slope * i + self.intercept
+            if self.min_y <= y <= self.max_y:
+                points.append(Vector2(i,y))
+        return points
+
     def intersect(self, other_line):
         # Where does this line intersect with the other line
         if self.vertical == True or other_line.vertical == True:

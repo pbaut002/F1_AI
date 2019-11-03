@@ -1,0 +1,954 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"time",
+				"time_elapsed〔variable〕"
+			],
+			[
+				"genera",
+				"generation_number〔variable〕"
+			],
+			[
+				"min",
+				"min_y〔variable〕"
+			],
+			[
+				"che",
+				"checkCorners〔function〕"
+			],
+			[
+				"curre",
+				"current_line2〔variable〕"
+			],
+			[
+				"max",
+				"max_x"
+			],
+			[
+				"crea",
+				"createGeneration"
+			],
+			[
+				"gene",
+				"generation_size〔variable〕"
+			],
+			[
+				"car",
+				"car_pos"
+			],
+			[
+				"ran",
+				"random"
+			],
+			[
+				"check",
+				"checkpoints〔argument〕"
+			],
+			[
+				"displ",
+				"display_size〔variable〕"
+			],
+			[
+				"num",
+				"number_correct"
+			],
+			[
+				"move",
+				"move_list"
+			],
+			[
+				"inte",
+				"intersect\tfunction"
+			],
+			[
+				"getC",
+				"getCarLines\tfunction"
+			],
+			[
+				"bottom",
+				"bottomright"
+			],
+			[
+				"m",
+				"min_y\tstatement"
+			],
+			[
+				"in",
+				"intercept\tstatement"
+			],
+			[
+				"curr",
+				"current_line2\tstatement"
+			],
+			[
+				"cu",
+				"current_line\tstatement"
+			],
+			[
+				"cur",
+				"current_line"
+			],
+			[
+				"inter",
+				"intersect\tfunction"
+			],
+			[
+				"coll",
+				"collision_point\tstatement"
+			],
+			[
+				"collision",
+				"collision_point"
+			],
+			[
+				"nex",
+				"next_checkpoint〔variable〕"
+			],
+			[
+				"n",
+				"next_checkpoint"
+			],
+			[
+				"checkp",
+				"checkpoints"
+			],
+			[
+				"draw",
+				"draw_mode〔variable〕"
+			],
+			[
+				"other",
+				"other_line〔argument〕"
+			],
+			[
+				"display",
+				"display_height〔variable〕"
+			],
+			[
+				"reset",
+				"reset_position〔variable〕"
+			],
+			[
+				"res",
+				"reset_position"
+			],
+			[
+				"event",
+				"eventHandling〔function〕"
+			],
+			[
+				"first",
+				"first_point〔variable〕"
+			],
+			[
+				"colli",
+				"collision_points〔variable〕"
+			],
+			[
+				"current",
+				"current_collision_points〔variable〕"
+			],
+			[
+				"ver",
+				"vertical"
+			],
+			[
+				"collisio",
+				"collision_point〔variable〕"
+			],
+			[
+				"po",
+				"point_of_intersect_x〔variable〕"
+			],
+			[
+				"col",
+				"collision_point〔variable〕"
+			],
+			[
+				"poin",
+				"point_of_intersect_y〔variable〕"
+			],
+			[
+				"bot",
+				"bottomright"
+			],
+			[
+				"mid",
+				"midbottom"
+			],
+			[
+				"accl",
+				"accelerating〔variable〕"
+			],
+			[
+				"bo",
+				"bottomright"
+			],
+			[
+				"getCa",
+				"getCarPos"
+			],
+			[
+				"get",
+				"getCarPos〔function〕"
+			],
+			[
+				"ca",
+				"car_rect〔variable〕"
+			],
+			[
+				"start",
+				"start_point〔variable〕"
+			],
+			[
+				"temp",
+				"temp_point〔variable〕"
+			],
+			[
+				"curren",
+				"current_line〔variable〕"
+			],
+			[
+				"print",
+				"printSlopes"
+			],
+			[
+				"car_",
+				"car_rect〔variable〕"
+			],
+			[
+				"re",
+				"car_rect〔variable〕"
+			],
+			[
+				"an",
+				"angle〔variable〕"
+			],
+			[
+				"key",
+				"keyDown"
+			],
+			[
+				"dis",
+				"distance〔variable〕"
+			],
+			[
+				"set",
+				"setOfLines"
+			],
+			[
+				"slop",
+				"slope_form〔function〕"
+			],
+			[
+				"int",
+				"intercept〔variable〕"
+			],
+			[
+				"pos",
+				"pos2〔argument〕"
+			],
+			[
+				"ang",
+				"angular_velocity〔variable〕"
+			],
+			[
+				"rotat",
+				"rotated〔variable〕"
+			],
+			[
+				"s",
+				"steering〔variable〕"
+			],
+			[
+				"vel",
+				"vel_x〔variable〕"
+			],
+			[
+				"di",
+				"display_height〔variable〕"
+			],
+			[
+				"inventor",
+				"inventory"
+			],
+			[
+				"auth",
+				"authenticated"
+			],
+			[
+				"au",
+				"authenticated"
+			],
+			[
+				"inven",
+				"inventory"
+			],
+			[
+				"log",
+				"login.html"
+			],
+			[
+				"inve",
+				"inventory"
+			],
+			[
+				"reu",
+				"request〔argument〕"
+			],
+			[
+				"background-c",
+				"background-color\tproperty"
+			],
+			[
+				"inv",
+				"inventory"
+			],
+			[
+				"divi",
+				"divisible_item〔variable〕"
+			],
+			[
+				"item",
+				"item_dictionary〔variable〕"
+			],
+			[
+				"ingredien",
+				"ingredientsAndAmount"
+			],
+			[
+				"Cal",
+				"calculateRestock〔function〕"
+			],
+			[
+				"ingre",
+				"ingredients"
+			],
+			[
+				"ingren",
+				"ingredients_used〔variable〕"
+			],
+			[
+				"drinks",
+				"drinks_used"
+			],
+			[
+				"inventory",
+				"inventoryManager"
+			],
+			[
+				"req",
+				"request.POST.keys"
+			],
+			[
+				"Do",
+				"ObjectDoesNotExist〔class〕"
+			],
+			[
+				"todays",
+				"todays_date.date"
+			],
+			[
+				"Drink",
+				"Drinks〔class〕"
+			],
+			[
+				"as",
+				"assets"
+			],
+			[
+				"D",
+				"DrinkDay"
+			],
+			[
+				"drink",
+				"drink_item〔variable〕"
+			],
+			[
+				"drin",
+				"drink_item〔variable〕"
+			],
+			[
+				"Max",
+				"MaxValueValidator〔class〕"
+			],
+			[
+				"timin",
+				"timings2"
+			],
+			[
+				"ve",
+				"vecStrings"
+			],
+			[
+				"su",
+				"suffix_array"
+			],
+			[
+				"sub",
+				"subsequence_max_n"
+			],
+			[
+				"longe",
+				"longestsub"
+			],
+			[
+				"break",
+				"break_statement"
+			],
+			[
+				"map",
+				"map_pointer"
+			],
+			[
+				"unorder",
+				"unordered_map\tstandard header (since c++11)"
+			],
+			[
+				"larges",
+				"largestDiff"
+			],
+			[
+				"invent",
+				"inventory_item"
+			],
+			[
+				"collection",
+				"collection-item"
+			],
+			[
+				"order",
+				"order_address"
+			],
+			[
+				"shipping",
+				"shipping_city"
+			],
+			[
+				"deliv",
+				"delivery_address"
+			],
+			[
+				"cart_quant",
+				"cart_quantity"
+			],
+			[
+				"session",
+				"sessions"
+			],
+			[
+				"ore",
+				"ordered_inventory"
+			],
+			[
+				"invento",
+				"inventory_quantity"
+			],
+			[
+				"orde",
+				"order_address"
+			],
+			[
+				"shipp",
+				"shipping"
+			],
+			[
+				"First",
+				"First_Name"
+			],
+			[
+				"cart",
+				"cart_items"
+			],
+			[
+				"search",
+				"search_string"
+			],
+			[
+				"date",
+				"datetime"
+			],
+			[
+				"Shipp",
+				"shipping_country"
+			],
+			[
+				"shi",
+				"shipping_address"
+			],
+			[
+				"quan",
+				"quantity_list"
+			],
+			[
+				"quanti",
+				"quantities"
+			],
+			[
+				"close",
+				"closeItem"
+			],
+			[
+				"right",
+				"right-align"
+			],
+			[
+				"collect",
+				"collection-item"
+			],
+			[
+				"materi",
+				"material-icons"
+			],
+			[
+				"succ",
+				"success_string"
+			],
+			[
+				"add",
+				"add_to_cart"
+			],
+			[
+				"toggle",
+				"toggleClass"
+			]
+		]
+	},
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Python + Virtualenv",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/Virtualenv/Python + Virtualenv.sublime-build",
+					""
+				]
+			],
+			[
+				"Anaconda Python Builder",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"viru",
+				"Virtualenv: Activate"
+			],
+			[
+				"virt",
+				"Virtualenv: Activate"
+			],
+			[
+				"virtual",
+				"Virtualenv: Activate"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"codeformatter ",
+				"CodeFormatter: Format as HTML Syntax"
+			],
+			[
+				"doc",
+				"DocBlockr: Decorate line comment"
+			],
+			[
+				"outline",
+				"Browse Mode: Outline (Right)"
+			],
+			[
+				"outlin",
+				"Browse Mode: Outline (Left)"
+			],
+			[
+				"outli",
+				"Outline: Toggle Sort"
+			],
+			[
+				"browse",
+				"Browse Mode: Outline (Right)"
+			],
+			[
+				"out",
+				"Outline: Toggle Sort"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"LiveReload: Enable/disable plugins",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"",
+				"LiveReload: Self test"
+			],
+			[
+				"package\t",
+				"Package Control: Install Package"
+			],
+			[
+				"pack\t",
+				"Package Control: Install Package"
+			],
+			[
+				"package c",
+				"Package Control: Install Package"
+			],
+			[
+				"Package",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+			" import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			" import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			" import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/main.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime-project",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Car.py",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Line.py",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime-project",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime_project",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481",
+		"/home/peter/Desktop/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_483/Oct10/class.py",
+		"/home/peter/Desktop/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime-project",
+		"/home/peter/Desktop/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Project/Game.py",
+		"/home/peter/Desktop/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Project/Brain.py",
+		"/home/peter/Desktop/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Project/Car.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Project/Car.py",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/help",
+		"/C/Users/Peter/Desktop/test.py",
+		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Game.py",
+		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/User/Virtualenv.sublime-settings",
+		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/Virtualenv/Virtualenv.sublime-settings",
+		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/Zen Tabs/ZenTabs.sublime-settings",
+		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/User/ZenTabs.sublime-settings",
+		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/Zen Tabs/TODO.todo",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Assignment_1.pdf",
+		"/C/Users/Peter/Dropbox/Personal_Stuff/Resume/Professional/PeterBautistaResume.tex",
+		"/C/Users/Peter/theleaves/manage.py",
+		"/C/Users/Peter/theleaves/inventory/urls.py",
+		"/C/Users/Peter/theleaves/inventory/templates/inventory/table.html",
+		"/C/Users/Peter/theleaves/inventory/templates/inventory/table-1.html",
+		"/C/Users/Peter/theleaves/inventory/templates/inventory/storedca.html",
+		"/C/Users/Peter/theleaves/inventory/templates/inventory/index.html",
+		"/C/Users/Peter/theleaves/inventory/templates/inventory/district.html",
+		"/C/Users/Peter/theleaves/inventory/templates/inventory/404.html",
+		"/C/Users/Peter/theleaves/inventory/templates/inventory/something.html",
+		"/C/Users/Peter/theleaves/inventory/templates/inventory/profile.html",
+		"/C/Users/Peter/theleaves/inventory/templates/inventory/login.html",
+		"/C/Users/Peter/theleaves/staticfiles/admin/js/vendor/select2/select2.full.js",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/templatetags/shopping_extras.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/templates/homepage/order_page.html",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/templates/homepage/orders.html",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/templates/homepage/home.html",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/views.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/urls.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Personal_Stuff/Resume/Professional/PeterBautistaResume.tex",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/templates/homepage/order_page.html",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/templates/homepage/home.html",
+		"/C/Users/Peter/theleaves/inventory/__init__.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/views.py",
+		"/C/Users/Peter/theleaves/theleaves/urls.py",
+		"/C/Users/Peter/theleaves/static/assets/bootstrap/js/bootstrap.min.js",
+		"/C/Users/Peter/theleaves/static/assets/js/chart.min.js",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/test_project/settings.py",
+		"/C/Users/Peter/theleaves/theleaves/settings.py",
+		"/C/Users/Peter/theleaves/inventory/templates/inventory/register.html",
+		"/C/Users/Peter/theleaves/inventory/views.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/templates/homepage/cart.html",
+		"/C/Users/Peter/theleaves/inventory/templates/index.html",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/models.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/admin.py",
+		"/C/Users/Peter/theleaves/inventory/migrations/0004_auto_20190823_1613.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/urls.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/test_project/urls.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/apps.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/__init__.py",
+		"/C/Users/Peter/theleaves/inventory/admin.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_362/SoftwareEngineering/test_project/manage.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_335/project-3/exhaustive_subsequence.hpp",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_335/project-2/Report files/project2.log",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_335/project-2/Report files/project2.tex",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_335/project-2/1-vowel_count/pseudocode.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_335/project-2/experiment.cpp",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_335/project-2/stringcount.hpp",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Fall 2018/Math 338/Homework 5/homework5.tex",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_335/project-2/experiment",
+		"/C/Users/Peter/asd/cls/src/App.js",
+		"/C/Users/Peter/summer_project/client/package.json",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Summer_2019/CPSC_335/project-2/rubric.json",
+		"/C/Users/Peter/Desktop/exercise4.cpp",
+		"/C/Users/Peter/Desktop/exercise4.py",
+		"/C/Users/Peter/Downloads/minecraft/run.bat",
+		"/C/Users/Peter/Downloads/minecraft/server.properties",
+		"/C/Users/Peter/Downloads/minecraft/ops.json",
+		"/C/Users/Peter/Dropbox/Jupyter/leaves/Seven_Leaves/apps.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/extra_files/add_items.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/test_project/homepage/add_items.py",
+		"/C/Users/Peter/heroku/SoftwareEngineering/django/requirements.txt",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/templates/homepage/order_page.html",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/urls.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/views.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/templatetags/shopping_extras.py",
+		"/C/Users/Peter/Desktop/SoftwareEngineering/django/homepage/,.",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/templates/homepage/home.html",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/models.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/add_inventory.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/migrations/0001_initial.py",
+		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/add_items.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/DELETE_ALL.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/migrations/0003_auto_20190616_2328.py",
+		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/User/CodeFormatter.sublime-settings",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/extra_files/add_inventory.py",
+		"/C/Users/Peter/AppData/Local/Temp/models.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/test_project/settings.py",
+		"/C/Users/Peter/Dropbox/Summer_2019/CPSC_362/SoftwareEngineering/django/homepage/static/login_app/style.css",
+		"/C/Users/Peter/SoftwareEngineering/django/homepage/templates/homepage/home.html",
+		"/C/Users/Peter/SoftwareEngineering/django/login_app/templates/login_app/style.css",
+		"/C/Users/Peter/SoftwareEngineering/django/test_project/urls.py",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/makefile",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 351/Project/Assignment_2/MManager.cpp",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/Lexer.h",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/Lexer.cpp",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/Syntax.cpp",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/Syntax.h",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 351/Project/Assignment 1/samplefiles/msg.h",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 351/Project/Assignment 1/samplefiles/recv.cpp",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 351/Project/Assignment 1/samplefiles/README.md",
+		"/C/Users/Peter/Desktop/goodluckmydude/process.h",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 351/Project/Assignment_2/main.cpp",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 351/Project/Assignment_2/MManager.h",
+		"/C/Users/Peter/Desktop/goodluckmydude/main.cpp",
+		"/C/Users/Peter/Desktop/goodluckmydude/frame.h",
+		"/C/Users/Peter/Desktop/goodluckmydude/process.cpp",
+		"/C/Users/Peter/Desktop/goodluckmydude/makefile",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 351/Project/Assignment_2/Documentation.tex",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/Documentation/Documentation.tex",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/practice_file.txt",
+		"/C/Users/Peter/Desktop/FINAL_PROJECT(FINAL_V)/Files/Syntax.cpp",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/mainh.h",
+		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/main.cpp"
+	],
+	"find":
+	{
+		"height": 54.0
+	},
+	"find_in_files":
+	{
+		"height": 94.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"position",
+			"counter",
+			"line.intersect(w)",
+			"self"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 57.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 187.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "PyProj",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\Peter\\Dropbox\\Spring 2019\\CPSC 240\\Assignment 1\\ioper-asm.asm"
+			],
+			[
+				"p\t",
+				"practice_file.txt"
+			],
+			[
+				"L\t",
+				"Lexer.cpp"
+			],
+			[
+				"p",
+				"practice_file.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 118.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 580.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 212.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

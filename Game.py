@@ -6,6 +6,7 @@ from Car import Car
 from math import floor, ceil
 from Line import Line
 from Brain import Brain
+from Brain import NeatManager
 
 TRACK_WIDTH = 10
 
@@ -38,7 +39,8 @@ def start():
     crashed = False
 
     # AI Handling
-    car_brain = None
+    brain = None
+    
     # Game Collision Handling
     current_line = []
     lines = []
@@ -54,6 +56,7 @@ def start():
     counter = 0
 
     reset_position = display_width / 2, display_height / 2
+    generation_size = 50
 
     while not crashed:
         for event in pygame.event.get():
@@ -71,10 +74,15 @@ def start():
                 if event.key == pygame.K_b and draw_mode:
                     create_checkpoint = True
                 if pygame.key.get_pressed()[pygame.K_b] and pygame.key.get_pressed()[pygame.K_LSHIFT] and lines:
-                    ai_mode = not ai_mode
-                    car_brain = Brain(car)
-                    if not car_brain.neural_network:
-                        car_brain.createAgent()
+                    if not ai_mode:
+                        brain = NeatManager(gameDisplay, display_size, reset_position, generation_size)
+                        brain.createGeneration()
+                        ai_mode = True
+                    else:
+                        brain = None
+                        ai_mode = False
+                        car = Car(gameDisplay, display_size)
+
                 if event.key == pygame.K_c:
                     # Clear lines
                     lines = []
@@ -149,7 +157,10 @@ def start():
 
         gameDisplay.fill(white)
         displayTime(gameDisplay, clock, display_size, time_elapsed)
-        displayScore(gameDisplay, display_size, car.score)
+        if not ai_mode:
+            displayScore(gameDisplay, display_size, car.score)
+        else:
+            displayScore(gameDisplay, display_size, max(brain.generation, key=lambda c: Brain.getScore(c)))
         drawTrack(gameDisplay, lines, black)
         drawCheckpoints(gameDisplay, checkpoints)
 
@@ -159,25 +170,30 @@ def start():
         if draw_mode and current_line:
             pygame.draw.line(
                 gameDisplay, black, current_line[0], pygame.mouse.get_pos(), TRACK_WIDTH)
+        
         if temp_point:
             rect = pygame.Rect(temp_point[0],
                                pygame.mouse.get_pos()[0] - temp_point[0][0],
                                pygame.mouse.get_pos()[1] - temp_point[0][1])
             pygame.draw.rect(gameDisplay, red, rect)
-
-        if checkpoints and len(next_checkpoint) == 0:
-            next_checkpoint = [Line(checkpoints[0][0], checkpoints[0][1])]
-
-        if not car.crashed:
-            if ai_mode:
-                car.update(car_brain.move(walls=collision_points, checkpoints=checkpoints),
-                           lines, collision_points, checkpoints, next_checkpoint)
-                car_brain.checkStatus()
-            else:
-                car.update(pygame.key.get_pressed(), lines,
-                           collision_points, checkpoints, next_checkpoint)
         
-        car.show()
+        if ai_mode:
+            brain.makeMoves(collision_points, checkpoints, time_elapsed)
+        else:
+            if not car.crashed:
+                car.update(pygame.key.get_pressed(), collision_points,
+                       checkpoints, time_elapsed)
+        if ai_mode:
+            for c in brain.generation:
+                c.car.show()
+            if brain.all_dead:
+                print("Culling")
+                brain.cullTheWeak()
+                brain.createGeneration()
+        else:
+            car.show()
+
+
         pygame.display.update()
         gameDisplay.fill(white)
         time_elapsed += clock.tick(60)
@@ -225,8 +241,8 @@ def printSlopes(lines):
 
 def drawCheckpoints(display, checkpoints):
     color = (0, 0, 255)
-    for c in checkpoints:
-        pygame.draw.line(display, color, c[0], c[1], TRACK_WIDTH)
+    for c in range(len(checkpoints)):
+        pygame.draw.line(display, color, checkpoints[c][0], checkpoints[c][1], TRACK_WIDTH)
 
 
 def buildWall(line, collisionPoints):
@@ -248,7 +264,7 @@ def saveTrack(lines, checkpoints, car):
 
 def loadTrack():
     car_pos = None
-    with open("./trackFile.csv") as csv_file:
+    with open("./trackFile.csv",'rU') as csv_file:
         writer = csv.reader(csv_file, delimiter=',', lineterminator='\r')
         current_line = []
         lines = []

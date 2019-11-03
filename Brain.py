@@ -1,59 +1,102 @@
-import tensorflow as tf
 import numpy as np
 import pygame
 import random as rand
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Activation, Flatten, Conv2D
-from tensorflow.keras.optimizers import Adam
+
+from collections import namedtuple
+
 from pygame import Vector2
+from Car import Car
 from Line import Line
 from math import sqrt
 
 
+class NeatManager():
+    def __init__(self, gd, size, start_position, number):
+        self.generation = []
+        self.gameDisplay = gd
+        self.displaySize = size
+        self.number_dead = 0
+        self.all_dead = False
+        self.start_position = start_position
+        self.generation_size = number
+        self.generation_number = 0
+
+    def createGeneration(self):
+        print("Generation: ", self.generation_number)
+        generation = []
+        for x in range(self.generation_size):
+            br = Brain(Car(self.gameDisplay, self.displaySize))
+            br.car.position.update(self.start_position)
+            generation.append(br)
+        self.generation = generation
+
+    def makeMoves(self, walls, checkpoints,time):
+        if self.number_dead >= len(self.generation):
+            return
+        i = 0
+        for c in self.generation:
+            if not c.car.crashed:
+                if i % 2 == 0: 
+                # move = c.move(walls=walls,checkpoints=checkpoints,next_checkpoint=next_checkpoint)
+                    move = Brain.availableMoves(c,rand.choice((1,3)))
+                else:
+                    move = Brain.availableMoves(c,rand.choice((0,2)))
+                if move:
+                    c.car.update(move, walls,
+                           checkpoints,time)
+                if c.car.crashed:
+                    self.number_dead += 1
+                i+=1
+        if self.number_dead >= len(self.generation):
+            print("Everyone dead boy")
+            self.all_dead = True
+
+
+    def cullTheWeak(self):
+        self.generation_number += 1
+        for c in self.generation:
+            print(c.car.score)
+        self.all_dead = False
+        self.number_dead = 0
+
 class Brain():
 
     def __init__(self, car, brain_file=None,):
-        self.score = 0
         self.car = car
         self.neural_network = None
         self.move_dict = {pygame.K_LEFT:False, pygame.K_UP:False, pygame.K_DOWN: False, pygame.K_RIGHT: False}
-        self.move_labels = [pygame.K_LEFT, pygame.K_UP, pygame.K_DOWN, pygame.K_RIGHT]
-        self.move_list = tf.convert_to_tensor([[1, 2,
-                                               3,4]])
-        print("BRAIN INITIALIZED BEEP BOOP")
-
+        self.move_labels = [pygame.K_LEFT, pygame.K_RIGHT, pygame.K_DOWN, pygame.K_UP]
+    
+    def __repr__(self):
+        return str(self.car.score)
     def reset_available(self):
         self.move_dict = {pygame.K_LEFT:False, pygame.K_UP:False, pygame.K_DOWN: False, pygame.K_RIGHT: False}
 
+    def availableMoves(self, choice):
+        if choice == 0:
+            return {pygame.K_LEFT:True, pygame.K_UP:True, pygame.K_DOWN: False, pygame.K_RIGHT: False}
+        elif choice == 1:
+            return {pygame.K_LEFT:True, pygame.K_UP:False, pygame.K_DOWN: True, pygame.K_RIGHT: False}
+        elif choice == 2:
+            return {pygame.K_LEFT:False, pygame.K_UP:True, pygame.K_DOWN: False, pygame.K_RIGHT: True}
+        elif choice == 3:
+            return {pygame.K_LEFT:False, pygame.K_UP:False, pygame.K_DOWN: True, pygame.K_RIGHT: True}
+
     def createAgent(self):
-        model = Sequential()
-        # model.add(Conv2D(100, (5,5), input_shape=(30,4)))##PLACEHOLDER))
-        model.add(Dense(4,input_shape=(4,)))
-        model.add(Dense(2, activation='relu'))
-        model.add(Dense(4, activation='relu'))
-        model.compile(loss="mse", optimizer=Adam(lr=0.001), metrics=['accuracy'])
-        self.neural_network = model
-        test_input = tf.convert_to_tensor([[1.0,2.0,3.0,4.0]])
+        pass
 
-        self.neural_network.evaluate(test_input, np.array(self.move_list))
-
+    def getScore(self):
+        return self.car.score
     def move(self, walls=None, checkpoints=None):
-        
-        self.reset_available()
-        # Look at Car position
-        car_position = self.car.position
-        
+                        
         # Load wall positions and checkpoints
         collision_points = self.see(walls)
         next_checkpoint = self.see([Line(checkpoints[0][0], checkpoints[0][1])], checkpoint=True)
-        print(collision_points, next_checkpoint)
-        # # Convert the inputs into some sort of tensor
-        test_input = tf.convert_to_tensor(([[rand.randrange(12.0),rand.randrange(12.0),rand.randrange(12.0),rand.randrange(12.0)]]))
-       
-        # # Create a prediction
-        prediction = self.neural_network.predict(test_input)
-        self.move_dict[self.move_labels[np.argmax(prediction)]] = True
-        return self.move_dict
+
+        if not self.car.crashed:
+            choice = rand.randint(0,3)
+            return self.availableMoves(choice)
+
 
     def checkStatus(self):
         if self.car.crashed:

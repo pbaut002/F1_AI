@@ -2,4 +2,4 @@
 # Default ignored files
 /workspace.xml
 /env
-
+*.pyc
