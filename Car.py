@@ -9,6 +9,7 @@ class Car():
 
     def __init__(self, game, display, brain=None):
         self.score = 0
+        self.time_alive = 0
         self.name = None
         # Car Attributes
         self.car_length = int(ceil(display[0] * 47 / 1120))
@@ -140,6 +141,9 @@ class Car():
     def teleportCar(self, position):
         self.position.update(position)
 
+    def getScore(self, time):
+        return round(self.score + (1/time) * 1000,2)
+
     def getCarAngle(self):
         return self.angle
 
@@ -212,6 +216,7 @@ class Car():
                 self.checkpoints.pop(0)
                 self.score += 1
                 self.next_checkpoint.pop(0)
+        
         self.angle = self.angle % 360
         self.angle += degrees(self.angular_velocity)
 

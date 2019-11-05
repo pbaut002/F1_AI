@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"confi",
+				"config_file"
+			],
+			[
+				"play",
+				"play_game〔function〕"
+			],
+			[
+				"generati",
+				"generation_size"
+			],
+			[
 				"time",
 				"time_elapsed〔variable〕"
 			],
@@ -502,18 +514,6 @@
 			[
 				"materi",
 				"material-icons"
-			],
-			[
-				"succ",
-				"success_string"
-			],
-			[
-				"add",
-				"add_to_cart"
-			],
-			[
-				"toggle",
-				"toggleClass"
 			]
 		]
 	},
@@ -684,9 +684,11 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Practice/neat.py",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Brain.py",
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/main.py",
-		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime-project",
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Car.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime-project",
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Line.py",
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime-project",
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime_project",
@@ -809,9 +811,7 @@
 		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 351/Project/Assignment_2/Documentation.tex",
 		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/Documentation/Documentation.tex",
 		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/practice_file.txt",
-		"/C/Users/Peter/Desktop/FINAL_PROJECT(FINAL_V)/Files/Syntax.cpp",
-		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/mainh.h",
-		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/main.cpp"
+		"/C/Users/Peter/Desktop/FINAL_PROJECT(FINAL_V)/Files/Syntax.cpp"
 	],
 	"find":
 	{
@@ -829,6 +829,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"elapsed",
+			"time_elap",
+			"score",
 			"position",
 			"counter",
 			"line.intersect(w)",
@@ -849,7 +852,7 @@
 	},
 	"incremental_find":
 	{
-		"height": 31.0
+		"height": 29.0
 	},
 	"input":
 	{
@@ -864,11 +867,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -884,16 +894,16 @@
 	},
 	"output.exec":
 	{
-		"height": 187.0
+		"height": 105.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "PyProj",
+	"pinned_build_system": "Main run",
 	"replace":
 	{
-		"height": 58.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":
