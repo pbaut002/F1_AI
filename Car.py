@@ -46,7 +46,7 @@ class Car():
 
         # Steering
         self.steering = 0
-        self.angle = .05
+        self.angle = .15
         self.length = self.car_length
         self.max_steering = 30
 
@@ -142,7 +142,9 @@ class Car():
         self.position.update(position)
 
     def getScore(self, time):
-        return round(self.score + (1/time) * 1000,2)
+        def distance(p1, p2):
+            return sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
+        return round(self.score) + (self.score/20) * 10
 
     def getCarAngle(self):
         return self.angle
