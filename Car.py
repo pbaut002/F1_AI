@@ -32,7 +32,7 @@ class Car():
         self.max_acceleration = .9
         self.max_braking_power = .4
         if display[0] < 800:
-            self.max_velocity = 10  # 3.5 Temp
+            self.max_velocity = 15  # 3.5 Temp
         else:
             self.max_velocity = 5
         self.friction = .04

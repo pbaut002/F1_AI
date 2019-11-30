@@ -4,8 +4,108 @@
 		"selected_items":
 		[
 			[
+				"generat",
+				"generation"
+			],
+			[
+				"gene",
+				"generation"
+			],
+			[
+				"rand",
+				"randint"
+			],
+			[
+				"move",
+				"move_index"
+			],
+			[
+				"move_",
+				"move_index"
+			],
+			[
+				"random",
+				"random_car〔variable〕"
+			],
+			[
+				"gener",
+				"generation〔variable〕"
+			],
+			[
+				"gen",
+				"generation_size〔variable〕"
+			],
+			[
+				"ran",
+				"randint〔function〕"
+			],
+			[
+				"get",
+				"getScore"
+			],
+			[
+				"generation",
+				"generation_size〔variable〕"
+			],
+			[
+				"eval",
+				"eval_genomes〔function〕"
+			],
+			[
+				"net",
+				"network_input〔variable〕"
+			],
+			[
+				"car_",
+				"car_rect"
+			],
+			[
+				"checkpo",
+				"checkpoints"
+			],
+			[
+				"chec",
+				"checkpoints〔argument〕"
+			],
+			[
+				"disn",
+				"distances〔variable〕"
+			],
+			[
+				"check",
+				"checkCollision〔function〕"
+			],
+			[
+				"next",
+				"next_checkpoint〔variable〕"
+			],
+			[
+				"rest",
+				"reset_position"
+			],
+			[
+				"reset",
+				"reset_position"
+			],
+			[
+				"coll",
+				"collision_points"
+			],
+			[
+				"n",
+				"neural_network"
+			],
+			[
 				"confi",
-				"config_file"
+				"config"
+			],
+			[
+				"ai",
+				"ai_track〔argument〕"
+			],
+			[
+				"event",
+				"event_post〔variable〕"
 			],
 			[
 				"play",
@@ -44,20 +144,8 @@
 				"createGeneration"
 			],
 			[
-				"gene",
-				"generation_size〔variable〕"
-			],
-			[
 				"car",
 				"car_pos"
-			],
-			[
-				"ran",
-				"random"
-			],
-			[
-				"check",
-				"checkpoints〔argument〕"
 			],
 			[
 				"displ",
@@ -66,10 +154,6 @@
 			[
 				"num",
 				"number_correct"
-			],
-			[
-				"move",
-				"move_list"
 			],
 			[
 				"inte",
@@ -108,20 +192,12 @@
 				"intersect\tfunction"
 			],
 			[
-				"coll",
-				"collision_point\tstatement"
-			],
-			[
 				"collision",
 				"collision_point"
 			],
 			[
 				"nex",
 				"next_checkpoint〔variable〕"
-			],
-			[
-				"n",
-				"next_checkpoint"
 			],
 			[
 				"checkp",
@@ -140,16 +216,8 @@
 				"display_height〔variable〕"
 			],
 			[
-				"reset",
-				"reset_position〔variable〕"
-			],
-			[
 				"res",
 				"reset_position"
-			],
-			[
-				"event",
-				"eventHandling〔function〕"
 			],
 			[
 				"first",
@@ -204,10 +272,6 @@
 				"getCarPos"
 			],
 			[
-				"get",
-				"getCarPos〔function〕"
-			],
-			[
 				"ca",
 				"car_rect〔variable〕"
 			],
@@ -226,10 +290,6 @@
 			[
 				"print",
 				"printSlopes"
-			],
-			[
-				"car_",
-				"car_rect〔variable〕"
 			],
 			[
 				"re",
@@ -454,66 +514,6 @@
 			[
 				"ore",
 				"ordered_inventory"
-			],
-			[
-				"invento",
-				"inventory_quantity"
-			],
-			[
-				"orde",
-				"order_address"
-			],
-			[
-				"shipp",
-				"shipping"
-			],
-			[
-				"First",
-				"First_Name"
-			],
-			[
-				"cart",
-				"cart_items"
-			],
-			[
-				"search",
-				"search_string"
-			],
-			[
-				"date",
-				"datetime"
-			],
-			[
-				"Shipp",
-				"shipping_country"
-			],
-			[
-				"shi",
-				"shipping_address"
-			],
-			[
-				"quan",
-				"quantity_list"
-			],
-			[
-				"quanti",
-				"quantities"
-			],
-			[
-				"close",
-				"closeItem"
-			],
-			[
-				"right",
-				"right-align"
-			],
-			[
-				"collect",
-				"collection-item"
-			],
-			[
-				"materi",
-				"material-icons"
 			]
 		]
 	},
@@ -684,12 +684,18 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Practice/neat.py",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/neat_config.txt",
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Brain.py",
-		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/main.py",
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Car.py",
-		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime-project",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Game.py",
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Line.py",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/main.py",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/trackFile.csv",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/best - Copy.pickle",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_483/Proj_1/proj_1.py",
+		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_483/Proj_1/proj.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Practice/neat.py",
+		"/C/Users/Peter/Dropbox (CSU Fullerton)/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime-project",
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime-project",
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481.sublime_project",
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/CPSC_481",
@@ -702,7 +708,6 @@
 		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/help",
 		"/C/Users/Peter/Desktop/test.py",
 		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
-		"/C/Users/Peter/Dropbox/Past_Semesters/Fall_2019/CPSC_481/Project/Game.py",
 		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/User/Virtualenv.sublime-settings",
 		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/Virtualenv/Virtualenv.sublime-settings",
 		"/C/Users/Peter/AppData/Roaming/Sublime Text 3/Packages/Zen Tabs/ZenTabs.sublime-settings",
@@ -806,12 +811,7 @@
 		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 351/Project/Assignment_2/MManager.h",
 		"/C/Users/Peter/Desktop/goodluckmydude/main.cpp",
 		"/C/Users/Peter/Desktop/goodluckmydude/frame.h",
-		"/C/Users/Peter/Desktop/goodluckmydude/process.cpp",
-		"/C/Users/Peter/Desktop/goodluckmydude/makefile",
-		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 351/Project/Assignment_2/Documentation.tex",
-		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/Documentation/Documentation.tex",
-		"/C/Users/Peter/Dropbox/Spring 2019/CPSC 323/Lexer/practice_file.txt",
-		"/C/Users/Peter/Desktop/FINAL_PROJECT(FINAL_V)/Files/Syntax.cpp"
+		"/C/Users/Peter/Desktop/goodluckmydude/process.cpp"
 	],
 	"find":
 	{
@@ -826,9 +826,44 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"move_index",
+			"choice",
+			"time_allowe",
+			"first_point",
+			"distance",
+			"nn",
+			"str",
+			"repr",
+			"gameDisplay",
+			"red",
+			"black",
+			"white",
+			"pygame.time",
+			"reset_position",
+			"counter",
+			"next_checkpoint",
+			"collision_points",
+			"temp_point",
+			"end_point",
+			"start_point",
+			"create_checkpoint",
+			"checkpoints",
+			"lines",
+			"current_line",
+			"brain",
+			"ai_mode",
+			"car",
+			"first_point",
+			"draw_mode",
+			"clock",
+			"display_size",
+			"gameDisplay",
+			"display_height",
+			"display_width",
+			"infoObject",
 			"elapsed",
 			"time_elap",
 			"score",
@@ -843,6 +878,30 @@
 		"regex": false,
 		"replace_history":
 		[
+			"self.red",
+			"self.black",
+			"self.reset_position",
+			"self.counter",
+			"self.next_checkpoint",
+			"self.collision_points",
+			"self.temp_point",
+			"self.end_point",
+			"self.start_point",
+			"self.create_checkpoint",
+			"self.checkpoints",
+			"self.lines",
+			"self.current_line",
+			"self.brain",
+			"self.ai_mode",
+			"self.car",
+			"self.first_point",
+			"self.draw_mode",
+			"self.clock",
+			"self.display_size",
+			"self.gameDisplay",
+			"self.display_height",
+			"self.display_width",
+			"self.infoObject"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -867,18 +926,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -894,7 +946,7 @@
 	},
 	"output.exec":
 	{
-		"height": 105.0
+		"height": 231.0
 	},
 	"output.find_results":
 	{

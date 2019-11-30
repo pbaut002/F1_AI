@@ -55,7 +55,7 @@ class Game():
 		self.next_checkpoint = []
 		self.counter = 0
 
-		self.generation_size = 10
+		self.generation_size = 50
 		self.reset_position = self.display_width / 2, self.display_height / 2
 		self.angle = 0
 
@@ -66,7 +66,7 @@ class Game():
 		for c in self.brain.generation:
 			c.car.time = time_elapsed
 			c.car.prev_pos = c.car.getCarPos()
-		while not self.crashed and len(self.brain.generation) > 0:
+		while not self.crashed and self.brain.all_dead == False:
 			for event in pygame.event.get():
 				if(ai_track):
 					event = pygame.event.Event(pygame.KEYDOWN)
@@ -219,7 +219,7 @@ class Game():
 
 			pygame.display.update()
 			self.gameDisplay.fill(self.white)
-			time_elapsed += self.clock.tick(60)
+			time_elapsed += self.clock.tick(120)
 			
 	
 	def quit(self):
