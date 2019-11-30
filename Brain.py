@@ -26,21 +26,22 @@ class NeatManager():
 		local_dir = os.path.dirname(__file__)
 		config_path = os.path.join(local_dir, 'neat_config.txt')
 		self.config_file = config_path
-		self.time_allowed = 6000
 
-	def createGeneration(self, genome=None,config=None):
+	def createGeneration(self,angle, genome=None,config=None):
 		# print("Generation: ", self.generation_number)
 		self.all_dead = False
 		self.number_dead = 0
+		self.generation = []
 		generation = []
 		nets = []
 		ge = []
 		for genome_id, g in genome:
 			g.fitness = 0
-			net = neat.nn.FeedForwardNetwork.create(g, config)
+			net = neat.nn.feed_forward.FeedForwardNetwork.create(g, config)
 			nets.append(net)
 			br = Brain(Car(self.gameDisplay, self.displaySize))
 			br.car.position.update(self.start_position)
+			br.car.angle = angle
 			br.setGenomeNet(g, net)
 			generation.append(br)
 			ge.append(g)
@@ -49,6 +50,8 @@ class NeatManager():
 		self.ge = ge
 
 	def makeMoves(self, walls, checkpoints,time):
+		def distance(p1, p2):
+			return sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
 		if self.number_dead >= len(self.generation):
 			return
 		i = 0
@@ -58,13 +61,19 @@ class NeatManager():
 				if move:
 					c.car.update(move, walls,
 						   checkpoints,time)
-				if c.car.crashed or time >= self.time_allowed:
-					c.genome.fitness = c.car.getScore(time)
+				if time - c.car.time > 1500 and distance(c.car.prev_pos, c.car.getCarPos()) < 125:
+					c.car.crashed = True
+					c.genome.fitness -= 1000
+				if c.car.crashed:
+					c.genome.fitness += c.car.getScore(time)
 					self.nets.pop(self.nets.index(c.neural_network))
 					self.generation.pop(self.generation.index(c))
 					self.ge.pop(self.ge.index(c.genome))
-
+				if c.car.prev_pos != c.car.getCarPos():
+					c.car.prev_pos = c.car.getCarPos()
+					c.car.time = time
 				i+=1
+
 		if self.number_dead >= len(self.generation):
 			# print("Everyone dead boy")
 			self.all_dead = True
@@ -103,14 +112,14 @@ class Brain():
 		self.move_dict = {pygame.K_LEFT:False, pygame.K_UP:False, pygame.K_DOWN: False, pygame.K_RIGHT: False}
 
 	def availableMoves(self, choice):
-		if choice == 0:
+		if choice == 1:
 			return {pygame.K_LEFT:True, pygame.K_UP:True, pygame.K_DOWN: False, pygame.K_RIGHT: False}
-		elif choice == 1:
-			return {pygame.K_LEFT:True, pygame.K_UP:False, pygame.K_DOWN: True, pygame.K_RIGHT: False}
 		elif choice == 2:
 			return {pygame.K_LEFT:False, pygame.K_UP:True, pygame.K_DOWN: False, pygame.K_RIGHT: True}
+		elif choice == 0:
+			return {pygame.K_LEFT:False, pygame.K_UP:True, pygame.K_DOWN: False, pygame.K_RIGHT: False}
 		elif choice == 3:
-			return {pygame.K_LEFT:False, pygame.K_UP:False, pygame.K_DOWN: True, pygame.K_RIGHT: True}
+			return {pygame.K_LEFT:False, pygame.K_UP:False, pygame.K_DOWN: True, pygame.K_RIGHT: False}
 
 	def createAgent(self):
 		pass
@@ -119,26 +128,25 @@ class Brain():
 		return self.car.getScore(time)
 
 	def move(self, walls=None, checkpoints=None):
-						
+		
+		def distance(p1,p2):
+			return sqrt((p1[0]-p2[0])**2 + 	(p1[1]-p2[1])**2)			
 		# Load wall positions and checkpoints
 		collision_points = self.see(walls)
-		next_checkpoint = self.see([Line(checkpoints[0][0], checkpoints[0][1])], checkpoint=True)
-		while len(collision_points) != 4:
-			collision_points.extend([999])
-		if len(next_checkpoint) != 4:
-			next_checkpoint = [checkpoints[0][0].x, checkpoints[0][0].y, 
-							   checkpoints[0][1].y, checkpoints[0][1].x]
+		
+		network_input = []
+		for c in collision_points:
+			dist = distance(c,[self.car.position.x, self.car.position.y])
+			network_input.append(dist)		
+		while(len(network_input) < 15):
+			network_input.append(-5)
+		
+		output = 0
 		if collision_points:
-			collision_points.extend(next_checkpoint)
-			collision_points.extend((self.car.position.x,self.car.position.y))
-			
-			output = self.neural_network.activate(collision_points)
+			output = self.neural_network.activate(network_input)
 			output = output.index(max(output))
-		else:
-			output = rand.randint(0,1)
-
+		
 		if not self.car.crashed:
-			choice = rand.randint(0,4)
 			return self.availableMoves(output)
 
 
@@ -158,12 +166,15 @@ class Brain():
 			line = Line(Vector2(point[0]), Vector2(point[1]))
 			for w in walls:
 				col_point = line.intersect(w)
-				if col_point and (checkpoint or distance(self.car.position, col_point) < 150):
+				if col_point and distance(self.car.position, col_point) < 125:
 					if checkpoint:
 						# Draw the checkpoints as a red dot
 						pygame.draw.circle(self.car.game, (0, 255, 0), col_point, 5)
+
 					else:
 						# Draw the checkpoints as a green dot
-						pygame.draw.circle(self.car.game, (255, 0, 0), col_point, 5)
-					closest_points.extend((col_point.x, col_point.y))
-		return closest_points[:4]
+						# pygame.draw.circle(self.car.game, (255, 0, 0), col_point, 5)
+						pygame.draw.line(self.car.game,(255,0,0) ,point[0],col_point,4)
+						closest_points.append((col_point.x, col_point.y))
+
+		return closest_points

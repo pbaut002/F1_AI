@@ -4,6 +4,7 @@ import neat
 import pickle
 
 start = Game()
+#start.run_game()
 start.initiateBrain()
 
 config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
@@ -12,15 +13,13 @@ config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
 
 manager = neat.Population(config)
 manager.add_reporter(neat.StdOutReporter(True))
-
-
+start.loadTrack()
 def eval_genomes(genome, config):
-	start.brain.createGeneration(genome=genome, config=config)
+	start.brain.createGeneration(start.angle, genome=genome, config=config)
 	start.run_game(ai_track=True)
-	start.brain.time_allowed = min(45000, start.brain.time_allowed + 3000)
-winner = manager.run(eval_genomes,100)
+
+winner = manager.run(eval_genomes,15000)
 
 pickle.dump(winner, open("best.pickle","wb"))
-
 
 start.quit()

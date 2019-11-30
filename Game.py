@@ -57,13 +57,16 @@ class Game():
 
 		self.generation_size = 10
 		self.reset_position = self.display_width / 2, self.display_height / 2
+		self.angle = 0
 
 
 	def run_game(self,ai_track=None):
 		time_elapsed = 0
 
+		for c in self.brain.generation:
+			c.car.time = time_elapsed
+			c.car.prev_pos = c.car.getCarPos()
 		while not self.crashed and len(self.brain.generation) > 0:
-			
 			for event in pygame.event.get():
 				if(ai_track):
 					event = pygame.event.Event(pygame.KEYDOWN)
@@ -114,13 +117,15 @@ class Game():
 						self.car.teleportCar(pygame.mouse.get_pos())
 					if ai_track == True or event.key == pygame.K_l:
 						self.reset_position, self.lines, self.checkpoints = self.loadTrack()
-						self.brain.start_position = self.reset_position
+						if self.brain:
+							self.brain.start_position = self.reset_position
 						self.collision_points = []
 						self.next_checkpoint = []
 						for line in self.lines:
 							self.buildWall(line, self.collision_points)
 						if self.reset_position:
 							self.car.reset(Vector2(self.reset_position))
+							self.car.angle = self.angle
 						self.time_elapsed = 0
 						self.car.score = 0
 					if event.key == pygame.K_q:
@@ -137,8 +142,8 @@ class Game():
 					if self.draw_mode:
 						if event.button == 1:
 							# Get first point from player
-							if first_point == False:
-								first_point = True
+							if self.first_point == False:
+								self.first_point = True
 								self.current_line.append(
 									Vector2(pygame.mouse.get_pos()))
 								break
@@ -160,7 +165,7 @@ class Game():
 
 						self.draw_mode = False
 						self.create_checkpoint = False
-						first_point = False
+						self.first_point = False
 						pygame.mouse.set_cursor(*pygame.cursors.arrow)
 						self.current_line = []
 				if ai_track:
@@ -277,7 +282,7 @@ class Game():
 			for c in checkpoints:
 				writer.writerow(("Checkpoint: ", c[0].x, c[0].y, c[1].x, c[1].y))
 			writer.writerow(
-				("Starting Position: ", car.getCarPos()[0], car.getCarPos()[1]))
+				("Starting Position: ", car.getCarPos()[0], car.getCarPos()[1],car.angle))
 
 
 	def loadTrack(self,):
@@ -290,6 +295,7 @@ class Game():
 			for row in writer:
 				if "Position" in row[0]:
 					self.car_pos = Vector2(float(row[1]), float(row[2]))
+					self.angle = float(row[3])
 				else:
 					self.current_line.append(Vector2(float(row[1]), float(row[2])))
 					self.current_line.append(Vector2(float(row[3]), float(row[4])))

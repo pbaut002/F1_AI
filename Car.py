@@ -29,13 +29,13 @@ class Car():
         self.game.blit(self.carImg, (x, y))
 
         # Max acceleration, velocity and friction
-        self.max_acceleration = 1.2
+        self.max_acceleration = .9
         self.max_braking_power = .4
         if display[0] < 800:
-            self.max_velocity = 15  # 3.5 Temp
+            self.max_velocity = 10  # 3.5 Temp
         else:
             self.max_velocity = 5
-        self.friction = .03
+        self.friction = .04
 
         # Car position and velocity
         self.position = Vector2(x, y)
@@ -48,7 +48,7 @@ class Car():
         self.steering = 0
         self.angle = .15
         self.length = self.car_length
-        self.max_steering = 30
+        self.max_steering = 40
 
         self.rotated = pygame.transform.rotate(self.carImg, self.angle)
         self.car_rect = self.rotated.get_rect(center=(self.getCarPos(
@@ -57,6 +57,8 @@ class Car():
         self.player_control = True
         self.checkpoints = None
         self.next_checkpoint = None
+        self.time = None
+        self.prev_pos = None
         # print(self.car_rect.topleft)
         # print(self.car_rect.topright)
         # print(self.car_rect.bottomleft)
@@ -135,7 +137,7 @@ class Car():
             for collision_point in current_collision_points:
                 for p in car_points:
                     # print("Car Point: {0} Collision: {1}".format(p, collision_point))
-                    if self.velocity.magnitude() > 0 and distance(p, collision_point) / (self.velocity.magnitude()) < .5:
+                    if self.velocity.magnitude() > 0 and distance(p, collision_point) / (self.velocity.magnitude()) < .3:
                         return True
 
     def teleportCar(self, position):
@@ -144,7 +146,10 @@ class Car():
     def getScore(self, time):
         def distance(p1, p2):
             return sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
-        return round(self.score) + (self.score/20) * 10
+        if self.crashed:
+            return (self.score/11)*10 - 20
+        else:
+            return (self.score/11)*10
 
     def getCarAngle(self):
         return self.angle
@@ -156,6 +161,7 @@ class Car():
         return [[self.car_rect.topright, self.car_rect.bottomleft],
                 [self.car_rect.topleft, self.car_rect.bottomright],
                 [self.car_rect.midleft, self.car_rect.midright],
+                [self.car_rect.midtop, self.car_rect.midbottom+Vector2(1.0,1.0)],
                 ]
 
     def reset(self, position):
@@ -183,7 +189,7 @@ class Car():
             if direction[pygame.K_UP]:
                 self.velocity.y = max(-self.max_velocity, (self.velocity.y +
                                                            min(self.acceleration.y - .09, self.max_acceleration)))
-            if direction[pygame.K_DOWN]:
+            if direction[pygame.K_DOWN] and self.velocity.y != 0:
                 self.velocity.y = min(self.max_velocity, self.velocity.y +
                                       min(self.acceleration.y + .09, self.max_braking_power))
         # Handle steering
