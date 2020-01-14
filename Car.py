@@ -29,10 +29,10 @@ class Car():
         self.game.blit(self.carImg, (x, y))
 
         # Max acceleration, velocity and friction
-        self.max_acceleration = .9
+        self.max_acceleration = .5
         self.max_braking_power = .4
         if display[0] < 800:
-            self.max_velocity = 15  # 3.5 Temp
+            self.max_velocity = 6  # 3.5 Temp
         else:
             self.max_velocity = 5
         self.friction = .04
@@ -46,7 +46,7 @@ class Car():
 
         # Steering
         self.steering = 0
-        self.angle = .15
+        self.angle = -.15
         self.length = self.car_length
         self.max_steering = 40
 
@@ -57,6 +57,7 @@ class Car():
         self.player_control = True
         self.checkpoints = None
         self.next_checkpoint = None
+        self.last_checkpoint = None
         self.time = None
         self.prev_pos = None
         # print(self.car_rect.topleft)
@@ -143,6 +144,16 @@ class Car():
     def teleportCar(self, position):
         self.position.update(position)
 
+    def getCornerPos(self):
+        return [self.car_rect.topright,
+                self.car_rect.topleft,
+                self.car_rect.bottomleft,
+                self.car_rect.bottomright,
+                self.car_rect.midbottom,
+                self.car_rect.midtop,
+                self.car_rect.midleft,
+                self.car_rect.midright]
+
     def getScore(self, time):
         def distance(p1, p2):
             return sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
@@ -222,6 +233,8 @@ class Car():
             self.next_checkpoint = [Line(self.checkpoints[0][0], self.checkpoints[0][1])]
             if self.checkCollision(self.next_checkpoint):
                 self.checkpoints.pop(0)
+                if len(checkpoints) == 1:
+                    self.score += 3000
                 self.score += 1
                 self.next_checkpoint.pop(0)
         

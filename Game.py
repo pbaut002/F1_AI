@@ -55,18 +55,17 @@ class Game():
 		self.next_checkpoint = []
 		self.counter = 0
 
-		self.generation_size = 50
+		self.generation_size = 10
 		self.reset_position = self.display_width / 2, self.display_height / 2
 		self.angle = 0
-
+		self.last_checkpoint = None
 
 	def run_game(self,ai_track=None):
 		time_elapsed = 0
-
 		for c in self.brain.generation:
 			c.car.time = time_elapsed
 			c.car.prev_pos = c.car.getCarPos()
-		while not self.crashed and self.brain.all_dead == False:
+		while not self.crashed and len(self.brain.generation) > 0:
 			for event in pygame.event.get():
 				if(ai_track):
 					event = pygame.event.Event(pygame.KEYDOWN)
@@ -180,6 +179,8 @@ class Game():
 			if not self.ai_mode:
 				self.displayScore(self.gameDisplay, self.display_size, self.car.score)
 			else:
+				self.displayGeneration(self.gameDisplay, self.display_size,self.brain.generation_number)
+				self.displayAlive(self.gameDisplay, self.display_size,len(self.brain.generation))
 				if time_elapsed > 0:
 					if len(self.brain.generation) > 0: 
 						self.displayScore(self.gameDisplay, self.display_size, max(self.brain.generation, key=lambda c: Brain.getScore(c,time_elapsed)))
@@ -219,7 +220,7 @@ class Game():
 
 			pygame.display.update()
 			self.gameDisplay.fill(self.white)
-			time_elapsed += self.clock.tick(120)
+			time_elapsed += self.clock.tick(60)
 			
 	
 	def quit(self):
@@ -246,6 +247,18 @@ class Game():
 		score = score_font.render(text_to_display, 1, (0, 0, 0))
 		self.gameDisplay.blit(score, (display[0] - score_font.size(text_to_display)[
 						 0], display[1] - score_font.size(text_to_display)[1]))
+
+	def displayGeneration(self,gameDisplay, display, generation):
+		text_to_display = "Generation: {}".format(generation)
+		score_font = pygame.font.SysFont('consolas', int(display[1] / 20))
+		score = score_font.render(text_to_display, 1, (0, 0, 0))
+		self.gameDisplay.blit(score, (.1*score_font.size(text_to_display)[0] , 0))
+
+	def displayAlive(self,gameDisplay, display, Alive):
+		text_to_display = "Alive: {}".format(Alive)
+		score_font = pygame.font.SysFont('consolas', int(display[1] / 20))
+		score = score_font.render(text_to_display, 1, (0, 0, 0))
+		self.gameDisplay.blit(score, (display[0] - score_font.size(text_to_display)[0] - 1080, display[1] - score_font.size(text_to_display)[1]))
 
 
 	def getDisplay(self,pygameInfo):

@@ -1,1 +1,3 @@
 pygame==2.0.0.dev3
+neat-python==0.92
+pickleshare==0.7.5
